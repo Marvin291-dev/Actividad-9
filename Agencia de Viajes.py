@@ -28,18 +28,14 @@ while True:
                             "codigo": Codigo_Cliente
                         }
             case 2:
-                if not Viajes:
-                    print("El cliente no se encontro")
-                else:
-                    for Codigo_Cliente, Datos in Viajes.items():
-                        print(f"\nCodigo del cliente: Codigo")
-                        print(f"Nombre: {Datos['Nombre']}")
-                        print(f"Destinos: ")
-                        for Destino, Datos in Datos['Destinos'].items():
-                            print(f" {Datos}:")
-                            print(f" Tarea {Datos['Nombre']}")
-                            print(f" Parcial {Datos['Destino']}")
-                            print(f" Proyecto {Datos['Codigo']}")
+                print("Listado de Clientes con su destino")
+                for carnet, datos in Viajes.items():
+                    print(f"\nCódigo: {carnet}")
+                    print(f"Nombre: {datos['nombre']}")
+                    print(f"Destinos:")
+                    for destino in datos['destinos']:
+                        print(f" - {destino}")
+
 
             case 3:
                 print("El total de destinos registrados")
