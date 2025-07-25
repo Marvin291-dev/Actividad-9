@@ -6,7 +6,15 @@ def registrar_Clientes():
         Nombre = input("Ingrese el Nombre Cliente: ")
         destinos = []
         while True:
-
+            cantidades = int(input("¿Cuantos destinos ha visitado (1-5)?: "))
+            if 1 <= cantidades <= 5:
+                break
+            print("Debe ingresar entre 1 a 5 destinos")
+        for i in range(cantidades):
+            destino = input(f"Ingrese el Destino {i + 1}: ")
+            destinos.append(destino)
+        Viajes[Codigo_Cliente] = {"Nombre": Nombre, "Destino": destino}
+    return Viajes
 
 while True:
     print("Menu de opciones")
@@ -21,7 +29,6 @@ while True:
             case 1:
 
             case 2:
-                mostrar_clientes()
             case 3:
                 print("El total de destinos registrados")
             case 4:
