@@ -32,7 +32,7 @@ def Cliente_Con_Mas_Destinos(cliente):
             Clientes_Top = (codigo, Datos["Nombre"])
             return Clientes_Top
 
-def Mostrar_Cliente(clientela)
+def Mostrar_Cliente(clientela):
     print("\n Listado de Clientes: ")
     for codigo, Datos in clientela.items():
         print(f"{codigo} - {Datos['Nombre']}: {' , '.join(Datos['Destino'])}")
@@ -50,7 +50,8 @@ while True:
             case 1:
                 Viajes = registrar_Clientes()
             case 2:
-                print("dad")
+                if Viajes:
+                    Mostrar_Cliente(Viajes)
             case 3:
                 if Viajes:
                     total = Contar_Destinos(Viajes)
@@ -58,7 +59,11 @@ while True:
                 else:
                     print("No hay clientes registrados")
             case 4:
-                print("El cliente con mas destinos")
+                if Viajes:
+                    Codigo, nombre = Cliente_Con_Mas_Destinos(Viajes)
+                    print(f"Cliente con mas destinos registrado: {Codigo} - {nombre}")
+                else:
+                    print("No hay clientes registrados")
             case 5:
                 print("¡Hasta luego!")
                 break
