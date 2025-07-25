@@ -1,5 +1,11 @@
-Viajes = {}
-
+def registrar_Clientes():
+    Viajes = {}
+    Cantidad = int(input("¿Cuántos clientes desea registrar? "))
+    for a in range(Cantidad):
+        Codigo_Cliente = input("Ingrese el Codigo Cliente: ")
+        Nombre = input("Ingrese el Nombre Cliente: ")
+        destinos = []
+        while True:
 
 
 while True:
