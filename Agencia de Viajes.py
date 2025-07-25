@@ -16,6 +16,12 @@ def registrar_Clientes():
         Viajes[Codigo_Cliente] = {"Nombre": Nombre, "Destino": destino}
     return Viajes
 
+def Contar_Destinos(Clientes):
+    def contar_lista(Lugares_Cliente):
+        if not Lugares_Cliente:
+            return 0
+        return contar_lista(list(Clientes.values()))
+
 while True:
     print("Menu de opciones")
     print("1. Ingreso de Clientes")
@@ -27,8 +33,9 @@ while True:
         opcion = int(input("Selecciona una opcion: "))
         match opcion:
             case 1:
-
+                Viajes = registrar_Clientes()
             case 2:
+                print("dad")
             case 3:
                 print("El total de destinos registrados")
             case 4:
