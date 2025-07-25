@@ -32,6 +32,11 @@ def Cliente_Con_Mas_Destinos(cliente):
             Clientes_Top = (codigo, Datos["Nombre"])
             return Clientes_Top
 
+def Mostrar_Cliente(clientela)
+    print("\n Listado de Clientes: ")
+    for codigo, Datos in clientela.items():
+        print(f"{codigo} - {Datos['Nombre']}: {' , '.join(Datos['Destino'])}")
+
 while True:
     print("Menu de opciones")
     print("1. Ingreso de Clientes")
