@@ -22,6 +22,16 @@ def Contar_Destinos(Clientes):
             return 0
         return contar_lista(list(Clientes.values()))
 
+def Cliente_Con_Mas_Destinos(cliente):
+    maximo_Destino = -1
+    Clientes_Top = None
+    for codigo, Datos in cliente.items():
+        canti = len(Datos["Destino"])
+        if canti > maximo_Destino:
+            maximo_Destino = canti
+            Clientes_Top = (codigo, Datos["Nombre"])
+            return Clientes_Top
+
 while True:
     print("Menu de opciones")
     print("1. Ingreso de Clientes")
@@ -37,7 +47,11 @@ while True:
             case 2:
                 print("dad")
             case 3:
-                print("El total de destinos registrados")
+                if Viajes:
+                    total = Contar_Destinos(Viajes)
+                    print(f"Total de destinos registrados: {total}")
+                else:
+                    print("No hay clientes registrados")
             case 4:
                 print("El cliente con mas destinos")
             case 5:
